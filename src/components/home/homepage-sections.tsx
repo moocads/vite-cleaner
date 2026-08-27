@@ -18,6 +18,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { LocationsExplorer } from "@/components/locations-explorer";
 import { SiteFooter } from "@/components/site-footer";
 import { buttonVariants } from "@/components/ui/button";
+import { getGoogleMapsApiKey } from "@/lib/maps";
 import { orderOnlineUrl, services } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
@@ -149,6 +150,8 @@ function PricingPreview() {
 }
 
 function LocationsMap() {
+  const googleMapsApiKey = getGoogleMapsApiKey();
+
   return (
     <section id="locations" className="bg-vite-blue-soft px-5 py-20 sm:px-8 lg:px-[72px] lg:py-24">
       <div className="mx-auto max-w-[1296px]">
@@ -156,7 +159,7 @@ function LocationsMap() {
           <h2 className="font-display text-4xl leading-[1.03] text-vite-ink sm:text-5xl">Three Toronto stores. One connected care network.</h2>
           <p className="mt-4 max-w-2xl text-base leading-7 text-vite-muted">Choose a convenient store, then open Google Maps for directions.</p>
         </Reveal>
-        <div className="mt-12"><LocationsExplorer compact /></div>
+        <div className="mt-12"><LocationsExplorer compact apiKey={googleMapsApiKey} /></div>
         <Link href="/locations" className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-vite-cobalt hover:text-vite-navy">View location details <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.7} /></Link>
       </div>
     </section>

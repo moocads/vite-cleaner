@@ -48,7 +48,7 @@ function loadGoogleMaps(apiKey: string) {
   return googleMapsPromise;
 }
 
-export function LocationsExplorer({ compact = false }: { compact?: boolean }) {
+export function LocationsExplorer({ compact = false, apiKey }: { compact?: boolean; apiKey?: string }) {
   const mapElementRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<google.maps.Map | null>(null);
   const positionsRef = useRef(new Map<LocationSlug, google.maps.LatLng>());
@@ -58,21 +58,21 @@ export function LocationsExplorer({ compact = false }: { compact?: boolean }) {
   const activeLocation = locations.find((location) => location.slug === activeSlug) ?? locations[0];
 
   useEffect(() => {
-    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+    const mapsApiKey = apiKey || process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
     const mapElement = mapElementRef.current;
 
-    if (!apiKey || !mapElement) {
+    if (!mapsApiKey || !mapElement) {
       setStatus("error");
       return;
     }
 
     let cancelled = false;
-    const mapsApiKey = apiKey;
+    const resolvedApiKey = mapsApiKey;
     const positions = positionsRef.current;
 
     async function initializeMap() {
       try {
-        await loadGoogleMaps(mapsApiKey);
+        await loadGoogleMaps(resolvedApiKey);
         const [{ Map: GoogleMap }, { AdvancedMarkerElement }] = await Promise.all([
           google.maps.importLibrary("maps") as Promise<google.maps.MapsLibrary>,
           google.maps.importLibrary("marker") as Promise<google.maps.MarkerLibrary>,
@@ -156,7 +156,7 @@ export function LocationsExplorer({ compact = false }: { compact?: boolean }) {
       markersRef.current = [];
       positions.clear();
     };
-  }, [compact]);
+  }, [apiKey, compact]);
 
   function focusLocation(slug: LocationSlug) {
     setActiveSlug(slug);
