@@ -171,7 +171,7 @@ function PickupDelivery() {
     <section className="bg-vite-paper px-5 py-20 sm:px-8 lg:px-[72px] lg:py-24">
       <div className="mx-auto grid max-w-[1296px] items-center gap-10 lg:grid-cols-[minmax(0,620px)_1fr] lg:gap-16">
         <Reveal className="relative min-h-[440px] overflow-hidden rounded-[28px] lg:min-h-[560px]">
-          <Image src="/images/vite-storefront-bay-bloor.jpg" alt="The Vite Cleaners storefront at Bay and Bloor in Toronto" fill sizes="(min-width: 1024px) 620px, 100vw" className="object-cover" />
+          <Image src="/images/vite-storefront-bay-bloor.jpg" alt="The Vite Cleaners storefront at Bay and Bloor in Toronto" fill unoptimized className="object-cover" />
         </Reveal>
         <Reveal>
           <span className="flex size-12 items-center justify-center rounded-[14px] bg-vite-blue-soft text-vite-cobalt"><Route aria-hidden="true" className="size-6" strokeWidth={1.7} /></span>
@@ -225,7 +225,7 @@ function CommercialTeaser() {
           <Link href="/commercial" className={cn(buttonVariants(), "mt-8 h-[52px] w-fit rounded-full bg-vite-cobalt px-6 text-vite-paper hover:bg-vite-navy")}>Explore Commercial Laundry <ArrowRight aria-hidden="true" className="size-4" /></Link>
         </Reveal>
         <Reveal delay={0.06} className="relative min-h-[440px] lg:min-h-[600px]">
-          <Image src="/images/commercial-laundry-gta.png" alt="A professional commercial laundry facility processing linens" fill sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" />
+          <Image src="/images/commercial-laundry-gta.jpg" alt="A professional commercial laundry facility processing linens" fill sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" />
         </Reveal>
       </div>
     </section>
@@ -234,9 +234,9 @@ function CommercialTeaser() {
 
 function CareGuide() {
   const articles = [
-    { title: "Caring for coats through a Toronto winter", image: "/images/audience-seasonal.png" },
-    { title: "When a garment needs dry cleaning", image: "/images/sustainable-care.png" },
-    { title: "How professional finishing changes the result", image: "/images/service-tracking.png" },
+    { title: "Caring for coats through a Toronto winter", image: "/images/audience-seasonal.jpg" },
+    { title: "When a garment needs dry cleaning", image: "/images/sustainable-care.jpg" },
+    { title: "How professional finishing changes the result", image: "/images/service-tracking.jpg" },
   ] as const;
   return (
     <section className="bg-vite-surface px-5 py-20 sm:px-8 lg:px-[72px] lg:py-24">

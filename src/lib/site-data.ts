@@ -38,7 +38,7 @@ export const services = [
     shortDescription: "Professional care for tailored pieces, delicate fabrics and everyday favourites.",
     description:
       "Give your suits, silk dresses, wool coats, and fine garments the specialized care they deserve. Using non-toxic, eco-conscious solvents and precise temp-controlled finishing, our dry cleaning process dissolves tough stains and lifts odours without breaking down delicate fibres or fading rich colours. Every item undergoes a multi-point inspection, complete with hand-finishing and custom pressing so your clothes return looking crisp, fresh, and ready to wear.",
-    image: "/images/hero-care-hd.png",
+    image: "/images/hero-care-hd.jpg",
     icon: Sparkles,
     items: ["Suits and jackets", "Dresses and formalwear", "Coats", "Sweaters", "Delicate fabrics"],
   },
@@ -49,7 +49,7 @@ export const services = [
     shortDescription: "Everyday laundry, professionally washed, dried and neatly folded.",
     description:
       "Stop spending hours sorting, washing, and folding. Our Wash & Fold service treats your everyday wardrobe t-shirts, denim, activewear, socks, and linens to professional-grade laundering. We separate items by temperature and colour profile, use hypoallergenic, eco-certified detergents, and tumble-dry on gentle heat settings to prevent shrinkage and fabric wear. Your laundry is then precisely hand-folded, organized, and packaged so putting it away is effortless.",
-    image: "/images/audience-families.png",
+    image: "/images/service-wash-fold.jpg",
     icon: WashingMachine,
     items: ["Everyday clothing", "Towels", "Bed sheets", "Casual wear", "Household laundry"],
   },
@@ -60,7 +60,7 @@ export const services = [
     shortDescription: "Clean, pressed shirts with a crisp, consistent finish.",
     description:
       "Make a lasting impression with crisp, perfectly laundered dress shirts. Our dedicated shirt care process targets collar ring and cuff grime using specialized pre-treatments before gentle laundering. Shirts are tension-pressed to eliminate wrinkles, keep collars structured, and maintain cuff geometry without causing fabric shine or seam stress.",
-    image: "/images/audience-professionals.png",
+    image: "/images/audience-professionals.jpg",
     icon: Shirt,
     items: ["Business shirts", "Casual shirts", "Blouses", "Folded shirts", "Pressed shirts"],
   },
@@ -71,7 +71,7 @@ export const services = [
     shortDescription: "Practical repairs and fit adjustments that keep garments in rotation.",
     description:
       "A great fit makes all the difference. Whether adjusting a new suit jacket, hemming trousers, replacing broken zippers, or reshaping a vintage dress, our master tailors deliver clean, seamless alterations. We preserve the original stitching style, seam allowances, and hem finishes whenever possible, ensuring your garments fit your body comfortably while retaining their original aesthetic design.",
-    image: "/images/sustainable-care.png",
+    image: "/images/sustainable-care.jpg",
     icon: Scissors,
     items: ["Hemming", "Sleeve adjustments", "Waist adjustments", "Zipper repair", "General mending"],
   },
@@ -82,7 +82,7 @@ export const services = [
     shortDescription: "Assessment-led care for shoes, leather, suede and specialty garments.",
     description:
       "Materials like natural leather, buttery suede, heavy winter parkas, and designer footwear require specialized techniques that standard cleaning can’t provide. Our Specialty Care department assesses each item’s material composition and structural integrity before beginning custom treatment. From re-hydrating dried leather and restoring suede pile to cleaning down jackets and cobbling worn soles, we extend the lifespan of your prized luxury items.",
-    image: "/images/audience-seasonal.png",
+    image: "/images/service-special-care.jpg",
     icon: SprayCan,
     items: ["Shoes", "Leather", "Suede", "Down garments", "Specialty outerwear"],
   },
@@ -93,7 +93,7 @@ export const services = [
     shortDescription: "Careful assessment, cleaning and finishing for meaningful garments.",
     description:
       "Your wedding gown is a priceless keepsake. Our wedding dress preservation specialists conduct a microscopic inspection to identify unseen stains that can turn yellow over time. Using fabric-specific, gentle solvents, we hand-clean intricate beadwork, lace, and train layers.",
-    image: "/images/service-tracking.png",
+    image: "/images/service-wedding-dress.jpg",
     icon: HeartPulse,
     items: ["Wedding dresses", "Formal gowns", "Detailed fabrics", "Veils", "Special occasion pieces"],
   },

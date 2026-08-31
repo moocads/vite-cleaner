@@ -2,9 +2,9 @@ import Image from "next/image";
 import { PageShell, SectionHeading } from "@/components/page-shell";
 
 const guides = [
-  { title: "Caring for coats through a Toronto winter", description: "A practical guide to salt, moisture and seasonal storage.", image: "/images/audience-seasonal.png" },
-  { title: "When a garment needs dry cleaning", description: "Understand labels, fabrics and when professional assessment matters.", image: "/images/sustainable-care.png" },
-  { title: "How professional finishing changes the result", description: "What pressing, shaping and final inspection contribute.", image: "/images/service-tracking.png" },
+  { title: "Caring for coats through a Toronto winter", description: "A practical guide to salt, moisture and seasonal storage.", image: "/images/audience-seasonal.jpg" },
+  { title: "When a garment needs dry cleaning", description: "Understand labels, fabrics and when professional assessment matters.", image: "/images/sustainable-care.jpg" },
+  { title: "How professional finishing changes the result", description: "What pressing, shaping and final inspection contribute.", image: "/images/service-tracking.jpg" },
 ] as const;
 
 export default function CareGuidePage() {

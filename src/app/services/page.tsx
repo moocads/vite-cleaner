@@ -6,7 +6,7 @@ import { services } from "@/lib/site-data";
 
 export default function ServicesPage() {
   return (
-    <PageShell title="Care for every garment." description="Explore professional cleaning, laundry, alterations and specialty care available through the Vite network." eyebrow="SERVICES" image="/images/sustainable-care.png" imageAlt="Garments receiving professional care">
+    <PageShell title="Care for every garment." description="Explore professional cleaning, laundry, alterations and specialty care available through the Vite network." eyebrow="SERVICES" image="/images/sustainable-care.jpg" imageAlt="Garments receiving professional care">
       <section className="bg-vite-paper px-5 py-20 sm:px-8 lg:px-[72px] lg:py-24">
         <div className="mx-auto max-w-[1296px]">
           <SectionHeading title="Choose the care you need." description="Specialty and heavily soiled items are reviewed before service confirmation." />
