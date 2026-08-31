@@ -12,7 +12,7 @@ export function generateStaticParams() { return services.map((service) => ({ slu
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
   const { slug } = await params;
   const service = services.find((item) => item.slug === slug);
-  return { title: service?.title ?? "Service", description: service?.shortDescription };
+  return { title: service?.detailTitle ?? "Service", description: service?.shortDescription };
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {
@@ -22,7 +22,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const Icon = service.icon;
 
   return (
-    <PageShell title={service.title} description={service.shortDescription} eyebrow="VITE SERVICE" image={service.image} imageAlt={service.title}>
+    <PageShell title={service.detailTitle} description={service.shortDescription} eyebrow="VITE SERVICE" image={service.image} imageAlt={service.detailTitle}>
       <section className="bg-vite-paper px-5 py-20 sm:px-8 lg:px-[72px] lg:py-24">
         <div className="mx-auto grid max-w-[1296px] gap-12 lg:grid-cols-[1fr_420px] lg:gap-20">
           <div><Icon aria-hidden="true" className="size-8 text-vite-cobalt" strokeWidth={1.7} /><SectionHeading title="Thoughtful care from assessment to finish." description={service.description} /><Link href="/locations" className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-vite-cobalt">Find a location <ArrowRight aria-hidden="true" className="size-4" /></Link></div>

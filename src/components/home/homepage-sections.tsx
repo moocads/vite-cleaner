@@ -19,13 +19,13 @@ import { LocationsExplorer } from "@/components/locations-explorer";
 import { SiteFooter } from "@/components/site-footer";
 import { buttonVariants } from "@/components/ui/button";
 import { getGoogleMapsApiKey } from "@/lib/maps";
-import { orderOnlineUrl, services } from "@/lib/site-data";
+import { bluebitsUrl, orderOnlineUrl, services } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
 const trustPoints = [
   { title: "Professional garment care", icon: Shirt },
   { title: "Three Toronto stores", icon: Store },
-  { title: "Pickup and delivery", icon: Truck },
+  { title: "Drop off and pickup", icon: Truck },
   { title: "Fabric-aware processes", icon: Leaf },
 ] as const;
 
@@ -49,10 +49,10 @@ function TrustStrip() {
 
 function HowItWorks() {
   const actions = [
-    { title: "Choose your service", description: "Visit a Vite store or start through the online order link.", icon: CalendarDays },
-    { title: "Hand off your garments", description: "Drop off locally or use an available pickup option.", icon: PackageCheck },
-    { title: "Professional care", description: "Items are assessed, cleaned and finished for their fabric and construction.", icon: Sparkles },
-    { title: "Pickup or delivery", description: "Collect at your store or receive your finished order back.", icon: Truck },
+    { title: "Book a drop off appointment", description: "Choose a Vite Store or BlueBox.", icon: CalendarDays },
+    { title: "Drop off at your nearest Vite Location", description: "Use a Vite Store or BlueBox.", icon: PackageCheck },
+    { title: "Professional Care", description: "Your garments receive professional care.", icon: Sparkles },
+    { title: "Pick up at your nearest Vite Location", description: "Return to a Vite Store or BlueBox.", icon: Truck },
   ] as const;
 
   return (
@@ -171,18 +171,22 @@ function PickupDelivery() {
     <section className="bg-vite-paper px-5 py-20 sm:px-8 lg:px-[72px] lg:py-24">
       <div className="mx-auto grid max-w-[1296px] items-center gap-10 lg:grid-cols-[minmax(0,620px)_1fr] lg:gap-16">
         <Reveal className="relative min-h-[440px] overflow-hidden rounded-[28px] lg:min-h-[560px]">
-          <Image src="/images/audience-families.png" alt="A Toronto family using a convenient garment care service" fill sizes="(min-width: 1024px) 620px, 100vw" className="object-cover" />
+          <Image src="/images/vite-storefront-bay-bloor.jpg" alt="The Vite Cleaners storefront at Bay and Bloor in Toronto" fill sizes="(min-width: 1024px) 620px, 100vw" className="object-cover" />
         </Reveal>
         <Reveal>
           <span className="flex size-12 items-center justify-center rounded-[14px] bg-vite-blue-soft text-vite-cobalt"><Route aria-hidden="true" className="size-6" strokeWidth={1.7} /></span>
-          <h2 className="mt-7 font-display text-4xl leading-[1.03] text-vite-ink sm:text-5xl">Less time on laundry. More time for your week.</h2>
-          <p className="mt-5 max-w-xl text-base leading-7 text-vite-muted">Explore pickup and delivery availability, prepare your garments and continue through the external ordering platform.</p>
+          <h2 className="mt-7 font-display text-4xl leading-[1.03] text-vite-ink sm:text-5xl">Drop off and pickup, made simple.</h2>
+          <p className="mt-5 max-w-xl text-base leading-7 text-vite-muted">Book a drop off appointment, leave your garments at a Vite Store or BlueBox, and pick them up after professional care.</p>
           <div className="mt-7 grid gap-3">
-            {["Choose an available pickup window", "Prepare garments for collection", "Receive professionally finished items back"].map((item) => <p key={item} className="flex items-start gap-3 text-sm leading-6 text-vite-ink"><CircleCheckBig aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-vite-cobalt" strokeWidth={1.7} />{item}</p>)}
+            {["Book a drop off appointment", "Drop off at your nearest Vite Location", "Professional Care", "Pick up at your nearest Vite Location"].map((item) => <p key={item} className="flex items-start gap-3 text-sm leading-6 text-vite-ink"><CircleCheckBig aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-vite-cobalt" strokeWidth={1.7} />{item}</p>)}
           </div>
+          <a href={bluebitsUrl} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-4 rounded-[16px] border border-vite-line bg-vite-surface px-5 py-4 transition-colors hover:border-vite-blue-mid" aria-label="Visit Bluebits to learn about BlueBox smart lockers">
+            <Image src="/brand/bluebits-logo.png" alt="BlueBox" width={512} height={114} unoptimized className="h-auto w-[132px]" />
+            <span className="text-xs leading-5 text-vite-muted">BlueBox smart lockers <ExternalLink aria-hidden="true" className="ml-1 inline size-3.5 text-vite-cobalt" /></span>
+          </a>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/pickup-delivery" className={cn(buttonVariants(), "h-[52px] rounded-full bg-vite-cobalt px-6 text-vite-paper hover:bg-vite-navy")}>See how it works</Link>
-            <Link href={orderOnlineUrl} className={cn(buttonVariants({ variant: "outline" }), "h-[52px] rounded-full border-vite-cobalt bg-transparent px-6 text-vite-cobalt hover:bg-vite-blue-soft")}>Order Online <ExternalLink aria-hidden="true" className="size-4" /></Link>
+            <Link href="/locations" className={cn(buttonVariants({ variant: "outline" }), "h-[52px] rounded-full border-vite-cobalt bg-transparent px-6 text-vite-cobalt hover:bg-vite-blue-soft")}>Find a Location <ArrowRight aria-hidden="true" className="size-4" /></Link>
           </div>
         </Reveal>
       </div>
@@ -251,7 +255,7 @@ function Faq() {
     ["How do I know which service I need?", "Bring the garment to a Vite store for assessment. The team can recommend the appropriate care method."],
     ["Do all stores provide the same services?", "Core services are available across the network. Specialty items may need confirmation before acceptance."],
     ["Where can I see current pricing?", "A confirmed price list is being prepared. Final pricing may vary by garment, fabric and condition."],
-    ["How do I arrange pickup and delivery?", "Use the Order Online link to continue to the external ordering platform once its final URL is connected."],
+    ["How do drop off and pickup work?", "Book a drop off appointment, leave your garments at a Vite Store or BlueBox, and pick them up after professional care."],
   ] as const;
   return (
     <section className="bg-vite-paper px-5 py-20 sm:px-8 lg:px-[72px] lg:py-24">

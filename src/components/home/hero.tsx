@@ -16,7 +16,7 @@ export function Hero() {
             Premium care, made effortless.
           </h1>
           <p className="mt-6 max-w-[520px] font-lead text-lg leading-[1.55] text-vite-ink lg:text-[19px]">
-            Dry cleaning, alterations and flexible pickup options across three Toronto locations.
+            Dry cleaning, alterations and convenient drop off options across three Toronto locations.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -44,11 +44,11 @@ export function Hero() {
 
         <div className="relative min-h-[460px] overflow-hidden rounded-[28px] shadow-[0_18px_50px_-28px_rgba(15,48,100,0.32)] sm:min-h-[560px] lg:min-h-[620px]">
           <Image
-            src="/images/hero-care-hd.png"
-            alt="A Vite garment care specialist helping a customer"
+            src="/images/vite-store-interior.jpg"
+            alt="The bright interior and reception counter of a Vite Cleaners store"
             fill
             priority
-            sizes="(min-width: 1024px) 680px, 100vw"
+            unoptimized
             className="object-cover object-center"
           />
           <HeroImageCta />

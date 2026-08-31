@@ -6,7 +6,7 @@ import { locations, orderOnlineUrl, services } from "@/lib/site-data";
 const companyLinks = [
   { label: "About", href: "/about" },
   { label: "Reviews", href: "/reviews" },
-  { label: "Care Guide", href: "/care-guide" },
+  { label: "Care Guidance", href: "/care-guide" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ] as const;
@@ -25,7 +25,7 @@ export function SiteFooter() {
               className="h-auto w-[150px] object-contain"
             />
             <p className="mt-6 max-w-xs text-sm leading-6 text-vite-blue-soft/75">
-              Professional garment care, local service and flexible pickup options across Toronto and the GTA.
+              Professional garment care with convenient drop off and pickup options across Toronto and the GTA.
             </p>
             <Link
               href={orderOnlineUrl}
@@ -59,7 +59,7 @@ export function SiteFooter() {
                     </Link>
                   </li>
                 ))}
-                <li><Link href="/pickup-delivery" className="text-sm text-vite-blue-soft/70 hover:text-vite-paper">Pickup & Delivery</Link></li>
+                <li><Link href="/pickup-delivery" className="text-sm text-vite-blue-soft/70 hover:text-vite-paper">Drop Off & Pickup</Link></li>
               </ul>
             </div>
             <div>

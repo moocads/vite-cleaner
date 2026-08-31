@@ -13,9 +13,10 @@ const navigation = [
   { label: "Services", href: "/services" },
   { label: "Pricing", href: "/pricing" },
   { label: "Locations", href: "/locations" },
-  { label: "Pickup & Delivery", href: "/pickup-delivery" },
+  { label: "Drop Off & Pickup", href: "/pickup-delivery" },
   { label: "Commercial", href: "/commercial" },
   { label: "Franchise", href: "/franchise" },
+  { label: "Care Guidance", href: "/care-guide" },
 ] as const;
 
 export function SiteHeader() {
@@ -33,7 +34,7 @@ export function SiteHeader() {
           <Image src="/brand/horizontal-logo.svg" alt="Vite Cleaners" width={418} height={120} priority className="h-auto w-[118px] object-contain xl:w-[145px]" />
         </Link>
 
-        <nav aria-label="Primary navigation" className="hidden items-center gap-5 lg:flex xl:gap-7">
+        <nav aria-label="Primary navigation" className="hidden items-center gap-5 xl:flex xl:gap-7">
           {navigation.map((item) => (
             <Link
               key={item.href}
@@ -54,14 +55,14 @@ export function SiteHeader() {
             Order Online
             <ExternalLink aria-hidden="true" className="size-4" strokeWidth={1.7} />
           </Link>
-          <button type="button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} onClick={() => setOpen((value) => !value)} className="flex size-11 items-center justify-center rounded-full border border-vite-line text-vite-navy transition-colors hover:bg-vite-blue-soft lg:hidden">
+          <button type="button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} onClick={() => setOpen((value) => !value)} className="flex size-11 items-center justify-center rounded-full border border-vite-line text-vite-navy transition-colors hover:bg-vite-blue-soft xl:hidden">
             {open ? <X aria-hidden="true" className="size-5" /> : <Menu aria-hidden="true" className="size-5" />}
           </button>
         </div>
       </div>
 
       {open ? (
-        <nav aria-label="Mobile navigation" className="border-t border-vite-line bg-vite-paper px-5 py-5 lg:hidden">
+        <nav aria-label="Mobile navigation" className="border-t border-vite-line bg-vite-paper px-5 py-5 xl:hidden">
           <div className="mx-auto grid max-w-[1440px] gap-1">
             {navigation.map((item) => (
               <Link

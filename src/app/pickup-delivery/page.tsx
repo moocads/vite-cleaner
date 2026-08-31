@@ -1,19 +1,36 @@
-import { PackageCheck, Shirt, Truck } from "lucide-react";
+import Image from "next/image";
+import { CalendarDays, ExternalLink, MapPin, PackageCheck, Shirt } from "lucide-react";
 import { PageShell, FinalCta, SectionHeading } from "@/components/page-shell";
-import { orderOnlineUrl } from "@/lib/site-data";
+import { bluebitsUrl } from "@/lib/site-data";
 
 const steps = [
-  { title: "Choose an available pickup", description: "Continue through the external online ordering platform.", icon: Truck },
-  { title: "Prepare your garments", description: "Place items together and include any care notes requested during ordering.", icon: PackageCheck },
-  { title: "Professional care", description: "Garments are assessed, cleaned and finished for the selected service.", icon: Shirt },
-  { title: "Delivery back", description: "Finished items return according to the option confirmed with your order.", icon: Truck },
+  { title: "Book a drop off appointment", description: "Vite Store or BlueBox", icon: CalendarDays },
+  { title: "Drop off at your nearest Vite Location", description: "Vite Store or BlueBox", icon: MapPin },
+  { title: "Professional Care", description: "Your garments receive professional care.", icon: Shirt },
+  { title: "Pick up at your nearest Vite Location", description: "Vite Store or BlueBox", icon: PackageCheck },
 ] as const;
 
 export default function PickupDeliveryPage() {
   return (
-    <PageShell title="Pickup and delivery around your week." description="A convenient route from your door to professional garment care and back again." eyebrow="PICKUP & DELIVERY" image="/images/audience-families.png" imageAlt="A family enjoying time at home">
-      <section className="bg-vite-paper px-5 py-20 sm:px-8 lg:px-[72px] lg:py-24"><div className="mx-auto max-w-[1296px]"><SectionHeading title="From collection to finished return." description="Coverage, fees, minimum order and available windows will follow the confirmed external ordering rules." /><div className="mt-12 grid gap-5 md:grid-cols-2">{steps.map((step) => { const Icon = step.icon; return <article key={step.title} className="rounded-[24px] border border-vite-line bg-vite-surface p-7"><Icon aria-hidden="true" className="size-6 text-vite-cobalt" strokeWidth={1.7} /><h2 className="mt-6 font-display text-2xl text-vite-navy">{step.title}</h2><p className="mt-3 text-sm leading-6 text-vite-muted">{step.description}</p></article>; })}</div></div></section>
-      <FinalCta title="Ready to check availability?" description="Continue to the online ordering platform once the final external link is connected." label="Order Online" href={orderOnlineUrl} />
+    <PageShell title="Drop off and pick up around your week." description="Book a drop off appointment, leave your garments at a Vite Store or BlueBox, and pick them up after professional care." eyebrow="DROP OFF & PICKUP" image="/images/vite-storefront-bay-bloor.jpg" imageAlt="The Vite Cleaners storefront at Bay and Bloor in Toronto">
+      <section className="bg-vite-paper px-5 py-20 sm:px-8 lg:px-[72px] lg:py-24">
+        <div className="mx-auto max-w-[1296px]">
+          <SectionHeading title="Four simple steps from drop off to pickup." />
+          <div className="mt-12 grid gap-5 md:grid-cols-2">{steps.map((step) => { const Icon = step.icon; return <article key={step.title} className="rounded-[24px] border border-vite-line bg-vite-surface p-7"><Icon aria-hidden="true" className="size-6 text-vite-cobalt" strokeWidth={1.7} /><h2 className="mt-6 font-display text-2xl text-vite-navy">{step.title}</h2><p className="mt-3 text-sm leading-6 text-vite-muted">{step.description}</p></article>; })}</div>
+          <div className="mt-12 grid items-center gap-8 rounded-[28px] bg-vite-blue-soft p-7 sm:p-9 lg:grid-cols-[1fr_auto] lg:p-10">
+            <div>
+              <p className="text-xs font-medium text-vite-cobalt">BLUEBOX SMART LOCKERS</p>
+              <h2 className="mt-4 font-display text-3xl text-vite-navy sm:text-4xl">A convenient BlueBox drop off option.</h2>
+              <p className="mt-4 max-w-2xl text-sm leading-6 text-vite-muted">BlueBox smart lockers are provided by Bluebits. Visit Bluebits to learn more about the secure smart locker service.</p>
+            </div>
+            <a href={bluebitsUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-5 rounded-[18px] border border-vite-line bg-vite-paper px-6 py-5 transition-colors hover:border-vite-blue-mid" aria-label="Visit Bluebits to learn about BlueBox smart lockers">
+              <Image src="/brand/bluebits-logo.png" alt="BlueBox" width={512} height={114} unoptimized className="h-auto w-[154px]" />
+              <ExternalLink aria-hidden="true" className="size-5 shrink-0 text-vite-cobalt" />
+            </a>
+          </div>
+        </div>
+      </section>
+      <FinalCta title="Choose your nearest drop off location." description="Visit a Vite Store or use an available BlueBox smart locker." label="Find a Location" href="/locations" />
     </PageShell>
   );
 }

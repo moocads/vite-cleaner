@@ -84,6 +84,10 @@ body {
   letter-spacing: 0;
 }
 
+.font-display {
+  letter-spacing: 1px;
+}
+
 ::selection {
   background: #d6e2f0;
   color: #0f3064;
