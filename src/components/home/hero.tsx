@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { HeroImageCta } from "@/components/home/hero-image-cta";
-import { orderOnlineUrl } from "@/lib/site-data";
+import { PostalCodeBookingStarter } from "@/components/booking/postal-code-booking-starter";
 import { cn } from "@/lib/utils";
 
 export function Hero() {
@@ -18,17 +18,8 @@ export function Hero() {
           <p className="mt-6 max-w-[520px] font-lead text-lg leading-[1.55] text-vite-ink lg:text-[19px]">
             Dry cleaning, alterations and convenient drop off options across three Toronto locations.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href={orderOnlineUrl}
-              className={cn(
-                buttonVariants(),
-                "h-[52px] rounded-full bg-vite-cobalt px-6 text-sm text-vite-paper hover:bg-vite-navy",
-              )}
-            >
-              Order Online
-              <ExternalLink aria-hidden="true" className="size-4" strokeWidth={1.7} />
-            </Link>
+          <PostalCodeBookingStarter />
+          <div className="mt-4 flex flex-wrap gap-3">
             <Link
               href="/locations"
               className={cn(

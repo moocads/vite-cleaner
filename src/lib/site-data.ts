@@ -16,7 +16,7 @@ import {
   WashingMachine,
 } from "lucide-react";
 
-export const orderOnlineUrl = "#";
+export const orderOnlineUrl = "/book";
 export const bluebitsUrl = "https://www.bluebits.ca/";
 
 export type Service = {
