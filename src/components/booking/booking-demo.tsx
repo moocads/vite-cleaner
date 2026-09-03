@@ -24,6 +24,7 @@ import {
   Store,
   Truck,
   X,
+  type LucideIcon,
 } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 
@@ -417,7 +418,7 @@ export function BookingDemo({ initialPostal, initialMethod }: { initialPostal: s
   );
 }
 
-function DetailCard({ icon: Icon, label, value }: { icon: React.ComponentType<{ className?: string; "aria-hidden"?: boolean; strokeWidth?: number }>; label: string; value: string }) {
+function DetailCard({ icon: Icon, label, value }: { icon: LucideIcon; label: string; value: string }) {
   return <div className="rounded-[18px] border border-vite-line bg-vite-surface p-5"><Icon aria-hidden="true" className="size-5 text-vite-cobalt" strokeWidth={1.7} /><p className="mt-4 text-xs font-medium uppercase tracking-[0.08em] text-vite-muted">{label}</p><p className="mt-2 text-sm font-medium leading-6 text-vite-navy">{value}</p></div>;
 }
 
